@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Grade Calculator — Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-theme="dark">
+  <main class="section container">
+    <a href="../index.html" class="link">← Back</a>
+    <h1>Grade Calculator — Testable calculation engine</h1>
+    <p class="muted">Role: Frontend engineer · Stack: HTML/CSS/Vanilla JS</p>
+
+    <h3>Problem</h3>
+    <p>Create a mobile-first CGPA calculator with scenario simulation, correct numeric handling and edge-case safety. Low bundle size and wide compatibility were priorities.</p>
+
+    <h3>Solution</h3>
+    <p>Implemented a pure calculation core (normalizeGrades, weightedAggregate, simulateScenario) separated from UI. Accessible forms, inline validation and progressive disclosure for advanced options. Kept implementation framework-free for portability and speed.</p>
+
+    <h3>Engine notes</h3>
+    <p>Separation of concerns enabled unit-testing of the logic. Carefully validated boundary cases and normalized inputs to avoid rounding errors.</p>
+
+    <h3>Outcome</h3>
+    <p>Production-ready static page used in demos; demonstrates clear engineering practice: testable logic, accessibility, and performance-first delivery.</p>
+
+    <p>
+      <a class="btn btn-ghost" href="https://sa50tyam11.github.io/BCA-grade-calculator/" target="_blank">Live demo</a>
+      <a class="btn btn-ghost" href="https://github.com/sa50tyam11/grade-calculator" target="_blank">Repository</a>
+    </p>
+  </main>
+</body>
+</html>

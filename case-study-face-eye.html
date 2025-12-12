@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Face & Eye Detection — Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-theme="dark">
+  <main class="section container">
+    <a href="../index.html" class="link">← Back</a>
+    <h1>Face & Eye Detection — Offline attendance prototype</h1>
+    <p class="muted">Role: Lead engineer · Stack: C++ · OpenCV · Haar cascades</p>
+
+    <h3>Problem</h3>
+    <p>Build a privacy-preserving, offline attendance capture that runs on commodity laptops without cloud dependency. Constraints: low CPU, limited memory, and varying indoor lighting.</p>
+
+    <h3>Solution & architecture</h3>
+    <p>Single-process pipeline: webcam capture → CLAHE preprocessing → Haar-based face detection → eye detection → temporal consensus filter → CSV logger. Design prioritized deterministic CPU usage and predictable latency. CLI for export and basic reporting.</p>
+
+    <h3>Trade-offs</h3>
+    <p>Haar cascades were chosen over DNN models to avoid GPU requirements and heavy dependencies. This lowered raw accuracy but ensured immediate deployability and stable performance on low-end hardware.</p>
+
+    <h3>Testing & metrics</h3>
+    <p>Field-tested across multiple sessions, tuned temporal window to reduce false positives. Achieved >85% detection in standard indoor conditions after tuning.</p>
+
+    <h3>Outcome</h3>
+    <p>Delivered a prototype producing CSV attendance logs. Validated product hypothesis without cloud costs and reduced administrative effort for the client.</p>
+
+    <p><a class="btn btn-ghost" href="https://github.com/sa50tyam11/face-eye-detection-opencv" target="_blank">Repository</a></p>
+  </main>
+</body>
+</html>
