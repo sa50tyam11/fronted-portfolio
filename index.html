@@ -21,26 +21,23 @@
       const intro = document.getElementById("intro");
       if (!intro) return;
 
-      // if intro already shown in this session, remove instantly
-      if (sessionStorage.getItem("introPlayed")) {
-        intro.remove();
-        return;
-      }
+      // duration: shorter on mobile
+      const isMobile = window.innerWidth < 768;
+      const DURATION = isMobile ? 1000 : 1600;
 
-      sessionStorage.setItem("introPlayed", "true");
-
+      // fail-safe: never block site
       setTimeout(() => {
-        intro.style.opacity = "0";
-        intro.style.transform = "scale(1.05)";
+        intro.classList.add("hide");
         intro.style.pointerEvents = "none";
-
-        setTimeout(() => {
-          intro.remove();
-        }, 1000);
       }, 2500);
+
+      // normal flow
+      setTimeout(() => {
+        intro.classList.add("hide");
+        intro.style.pointerEvents = "none";
+      }, DURATION);
     });
   </script>
-
 
   <!-- Header (glass) -->
   <header class="site-header">
@@ -357,12 +354,7 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
-
-    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-    <!-- Contact logic -->
-    <script src="contact.js"></script>
 
 
 

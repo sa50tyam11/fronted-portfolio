@@ -6,11 +6,13 @@
   const qa = s => Array.from(document.querySelectorAll(s));
 
   // mobile nav toggle
-  const menuBtn = q('#menuBtn');
-  const nav = q('#nav');
-  if(menuBtn){
-    menuBtn.addEventListener('click', ()=> nav.classList.toggle('open'));
-  }
+ const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn?.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
 
   // smooth nav links
   qa('.nav-link').forEach(link => {
@@ -51,9 +53,9 @@ document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
   });
   back.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
 
- 
+  // 🔴 Replace with your actual EmailJS keys
 const EMAILJS_PUBLIC_KEY = "LbR8q-iqH8hGty18c";
-const EMAILJS_SERVICE_ID = "service_dkjtpaf";
+const EMAILJS_SERVICE_ID = "service_5z1q6pf";
 const EMAILJS_TEMPLATE_ID = "template_x8xbxwq";
 
 // Initialize EmailJS
@@ -174,3 +176,17 @@ if (cinematicTarget) {
 }
 
 
+// mobile nav 
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn?.addEventListener("click", () => {
+  if (nav.style.display === "flex") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+    nav.style.gap = "12px";
+  }
+});
