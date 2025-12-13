@@ -248,69 +248,73 @@
 
 
     <!-- ABOUT -->
-     <section id="about" class="section section-alt fade-in">
-  <div class="container about-grid">
+    <section id="about" class="section section-alt fade-in">
+      <div class="container about-grid">
 
-    <!-- LEFT: ABOUT TEXT -->
-    <div>
-      <h2>About</h2>
-      <p>
-        I’m a frontend engineer who focuses on predictable, maintainable UI. I separate logic from
-        presentation, write testable calculation engines when needed, and prioritize accessibility
-        and performance. Delivered static sites, prototypes and small systems for clients and peers.
-      </p>
+        <!-- LEFT: ABOUT TEXT -->
+        <div>
+          <h2>About</h2>
+          <p>
+            I’m a frontend engineer who focuses on predictable, maintainable UI. I separate logic from
+            presentation, write testable calculation engines when needed, and prioritize accessibility
+            and performance. Delivered static sites, prototypes and small systems for clients and peers.
+          </p>
 
-      <div class="about-actions">
-        <a href="about.html" class="btn btn-outline">Read more about me</a>
-        <a href="assets/Satyam_Kumar_Resume.pdf" class="btn btn-primary" download>
-          Download CV
-        </a>
+          <div class="about-actions">
+            <a href="about.html" class="btn btn-outline">Read more about me</a>
+            <a href="assets/Satyam_Kumar_Resume.pdf" class="btn btn-primary" download>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: PHOTO (THIS WAS MISSING) -->
+        <aside class="about-photo glass">
+          <img src="assets/img1.jpg" alt="Satyam Kumar">
+        </aside>
+
       </div>
-    </div>
-
-    <!-- RIGHT: PHOTO (THIS WAS MISSING) -->
-    <aside class="about-photo glass">
-      <img src="assets/img1.jpg" alt="Satyam Kumar">
-    </aside>
-
-  </div>
-</section>
+    </section>
 
 
 
     <!-- CONTACT -->
-    <section id="contact" class="section fade-in">
+    <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contactForm" class="contact-form" novalidate>
+
+        <form id="contact-form" class="contact-form">
           <div class="form-row">
-            <input name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="from_name" placeholder="Name" required />
+            <input type="email" name="from_email" placeholder="Email" required />
           </div>
-          <input name="project" placeholder="Project title (short)" required>
-          <textarea name="message" rows="5" placeholder="Brief description & budget (optional)"></textarea>
-          <div class="form-row actions">
-            <button class="btn btn-primary" type="submit">Send brief</button>
-            <a class="btn btn-outline" href="https://github.com/sa50tyam11" target="_blank">View GitHub</a>
-          </div>
-          <p class="muted small">Tip: include timeline & budget for a faster reply.</p>
+
+          <textarea name="message" rows="5" placeholder="DROP YOUR MESSAGE"></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            Send message
+          </button>
+
+          <p id="form-status" class="form-status"></p>
         </form>
       </div>
     </section>
-  </main>
 
-  <!-- Footer + back to top -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Satyam Kumar — Frontend Engineer</div>
-      <div class="footer-links"><a href="https://github.com/sa50tyam11" target="_blank">GitHub</a> · <a
-          href="https://www.linkedin.com/in/satyamkrjha5011" target="_blank">LinkedIn</a></div>
-    </div>
-  </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <!-- Footer + back to top -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Satyam Kumar — Frontend Engineer</div>
+        <div class="footer-links"><a href="https://github.com/sa50tyam11" target="_blank">GitHub</a> · <a
+            href="https://www.linkedin.com/in/satyamkrjha5011" target="_blank">LinkedIn</a></div>
+      </div>
+    </footer>
 
-  <script src="script.js"></script>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </body>
 
 </html>

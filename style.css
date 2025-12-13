@@ -256,6 +256,8 @@ body{
   line-height: 1.4;
 }
 /* snitch type intro  */
+/* ===== Intro (Slow write, short total) ===== */
+
 #intro {
   position: fixed;
   inset: 0;
@@ -264,6 +266,7 @@ body{
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  transition: opacity 0.4s ease;
 }
 
 .intro-text {
@@ -271,32 +274,21 @@ body{
   letter-spacing: 0.2em;
   color: transparent;
   -webkit-text-stroke: 1px var(--accent);
-  animation: drawText 1.8s ease forwards;
+  animation: drawText 1.2s ease forwards; /* 👈 slow write */
 }
 
 @keyframes drawText {
-  0% {
+  from {
     clip-path: inset(0 100% 0 0);
     opacity: 0;
   }
-  100% {
+  to {
     clip-path: inset(0 0 0 0);
     opacity: 1;
   }
 }
-#intro {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #12091f, #05020a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
 
 #intro.hide {
   opacity: 0;
-  transform: scale(1.05);
   pointer-events: none;
 }

@@ -1,60 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Satyam Kumar</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body data-theme="dark">
 
-  <!-- Header (reuse same navbar if you want) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner container">
-      <a class="brand" href="index.html">PORTFOLIO<span class="accent">.</span></a>
+      <a href="index.html" class="brand">
+        PORTFOLIO<span class="accent">.</span>
+      </a>
+
       <nav class="nav">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link btn-outline" href="assets/Satyam_Kumar_Resume.pdf" download>Download CV</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Work</a>
+        <a href="assets/Satyam_Kumar_Resume.pdf" class="nav-link btn-outline" download>
+          Download CV
+        </a>
       </nav>
     </div>
   </header>
 
+  <!-- Main -->
   <main>
+
+    <!-- Intro -->
     <section class="section">
-      <div class="container" style="max-width: 760px;">
+      <div class="container" style="max-width: 780px;">
         <h1>About Me</h1>
 
         <p class="section-lead">
-          Frontend engineer focused on clean UI, predictable behavior, and real-world usability.
+          Frontend engineer focused on building clean, accessible, and maintainable user interfaces.
         </p>
 
         <p>
-          I specialize in building accessible, performance-focused frontend interfaces using
-          semantic HTML, modern CSS, and JavaScript. I care deeply about maintainability —
-          separating logic from presentation and writing code that scales with the product.
+          I’m a frontend developer who enjoys turning complex requirements into predictable,
+          well-structured UI. My work focuses on semantic HTML, modern CSS, and pragmatic JavaScript
+          — with an emphasis on performance, accessibility, and long-term maintainability.
         </p>
 
         <p>
-          I’ve worked on static sites, UI-heavy prototypes, and small production systems.
-          My approach prioritizes clarity, performance, and long-term readability over
-          over-engineering.
+          I prefer simple, understandable solutions over over-engineering. I care about UI
+          consistency, clear component boundaries, and writing code that can scale as a product
+          grows.
         </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section section-alt">
+      <div class="container" style="max-width: 780px;">
+        <h2>Education</h2>
+
+        <div class="timeline-item">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p class="muted">
+            Currently pursuing
+          </p>
+          <p>
+            Studying core computer science subjects alongside hands-on frontend development.
+            Actively building projects and applying practical UI engineering concepts outside
+            of coursework.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Freelance & Work -->
+    <section class="section">
+      <div class="container" style="max-width: 780px;">
+        <h2>Freelance & Practical Work</h2>
 
         <p>
-          Currently open to internships, junior frontend roles, and contract-based freelance work.
+          Alongside my studies, I work on small freelance and contract-based frontend projects.
+          My work typically involves:
         </p>
 
-        <div style="margin-top: 28px; display: flex; gap: 14px;">
+        <ul class="list">
+          <li>Designing and developing responsive static websites</li>
+          <li>Building portfolio and personal branding sites</li>
+          <li>Creating UI-focused prototypes for early-stage ideas</li>
+          <li>Improving existing websites with better structure and performance</li>
+        </ul>
+
+        <p>
+          I’ve worked with individual clients, students, and small businesses — delivering clean,
+          usable interfaces rather than over-designed layouts. I handle projects end-to-end,
+          from layout and styling to deployment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section section-alt">
+      <div class="container" style="max-width: 780px;">
+        <h2>How I Work</h2>
+
+        <ul class="list">
+          <li>Write semantic, accessible HTML</li>
+          <li>Use modern CSS for layout, responsiveness, and motion</li>
+          <li>Keep JavaScript readable and purpose-driven</li>
+          <li>Prioritize performance and maintainability</li>
+          <li>Focus on predictable UI behavior</li>
+        </ul>
+
+        <p>
+          I’m comfortable working independently, following design references, and iterating
+          based on feedback. I value clarity in communication and realistic timelines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Availability -->
+    <section class="section">
+      <div class="container" style="max-width: 780px;">
+        <h2>Availability</h2>
+
+        <p>
+          I’m currently open to:
+        </p>
+
+        <ul class="list">
+          <li>Frontend internships</li>
+          <li>Junior frontend roles</li>
+          <li>Freelance and contract-based work</li>
+        </ul>
+
+        <div style="margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap;">
           <a href="assets/Satyam_Kumar_Resume.pdf" class="btn btn-primary" download>
             Download CV
           </a>
           <a href="index.html#contact" class="btn btn-outline">
-            Contact me
+            Get in touch
           </a>
         </div>
       </div>
     </section>
+
   </main>
 
 </body>

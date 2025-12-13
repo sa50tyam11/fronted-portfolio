@@ -94,23 +94,52 @@ window.addEventListener('scroll', () => {
 
 // snitch type intro 
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("intro").style.opacity = "0";
-    document.getElementById("intro").style.pointerEvents = "none";
-  }, 1800);
-});
-
-window.addEventListener("load", () => {
   const intro = document.getElementById("intro");
+  if (!intro) return;
 
+  // 1.2s write + 0.4s pause = 1.6s
   setTimeout(() => {
     intro.classList.add("hide");
 
-    // remove completely after fade
+    // fade out duration = 0.4s
     setTimeout(() => {
       intro.remove();
-    }, 900);
-  }, 1000); 
+    }, 400);
+  }, 1600);
 });
 
 
+
+// email.js 
+(function () {
+  emailjs.init("LbR8q-iqH8hGty18c"); 
+})();
+
+const form = document.getElementById("contact-form");
+const statusMsg = document.getElementById("form-status");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  statusMsg.textContent = "Sending...";
+  statusMsg.style.opacity = "0.8";
+
+  emailjs
+    .sendForm(
+      "service_dkjtpaf",   
+      "template_x8xbxwq",  
+      this
+    )
+    .then(
+      () => {
+        statusMsg.textContent = "Message sent successfully.";
+        statusMsg.style.color = "#9effc2";
+        form.reset();
+      },
+      (error) => {
+        statusMsg.textContent = "Failed to send message. Please try again.";
+        statusMsg.style.color = "#ff9e9e";
+        console.error("EmailJS error:", error);
+      }
+    );
+});
