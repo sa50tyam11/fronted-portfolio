@@ -65,6 +65,10 @@ body{
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 .hero-meta{list-style:none;padding:0;margin:14px 0 0;color:var(--muted)}
+.hero-bg {
+  will-change: transform;
+}
+
 
 /* ------------------------------
    Glass card on hero (profile)
@@ -103,13 +107,38 @@ body{
 .mini-links{display:flex;gap:10px;margin-top:auto}
 .link{color:var(--accent)}
 
-/* SKILLS LOOP */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
-.skills-loop{overflow:hidden;width:100%;margin-top:28px}
-.loop-track{display:flex;gap:40px;align-items:center;animation:scrollLoop 20s linear infinite}
-.loop-track img{height:48px;filter:drop-shadow(0 6px 18px rgba(179,123,255,0.14));transition:transform .22s}
-.loop-track img:hover{transform:scale(1.15)}
-@keyframes scrollLoop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.skills-loop {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.loop-track {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  animation: scrollLoop 22s linear infinite;
+}
+
+.loop-track img {
+  height: 48px;
+  width: auto;
+  opacity: 0.85;
+  filter: grayscale(30%) drop-shadow(0 6px 18px rgba(179,123,255,0.35));
+  transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+}
+
+.loop-track img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: grayscale(0%) drop-shadow(0 8px 28px rgba(179,123,255,0.65));
+}
+
+@keyframes scrollLoop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 
 /* ABOUT grid */
 .about-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
@@ -129,8 +158,19 @@ body{
 .back-to-top.show{display:block}
 
 /* fade-in helper (JS toggles .show) */
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
-.fade-in.show{opacity:1;transform:none}
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition:
+    opacity 0.9s cubic-bezier(.22,.61,.36,1),
+    transform 0.9s cubic-bezier(.22,.61,.36,1);
+  will-change: transform, opacity;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 /* Responsive */
 @media (max-width:1000px){
@@ -147,4 +187,53 @@ body{
   .hero-card{display:none}
   .cs-grid{grid-template-columns:1fr}
   .mini-grid{grid-template-columns:1fr}
+}
+
+
+
+.hero-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-role {
+  font-size: .9rem;
+  color: var(--accent);
+  margin: 4px 0;
+}
+
+.hero-tagline {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+/* snitch type intro  */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #12091f, #05020a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.intro-text {
+  font-size: clamp(3rem, 10vw, 8rem);
+  letter-spacing: 0.2em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+  animation: drawText 1.8s ease forwards;
+}
+
+@keyframes drawText {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
 }

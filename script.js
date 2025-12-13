@@ -1,11 +1,4 @@
-/* main behaviors:
-   - mobile nav toggle
-   - smooth scroll + active link collapse
-   - fade-in intersection observer
-   - back-to-top
-   - contact form mailto handler
-   - respect prefers-reduced-motion
-*/
+
 
 (function(){
   // helpers
@@ -35,22 +28,20 @@
   });
 
   // fade-in on scroll (IntersectionObserver)
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!prefersReduced){
-    const faders = qa('.fade-in');
-    const obs = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.2});
-    faders.forEach(el => obs.observe(el));
-  } else {
-    // if user prefers reduced motion, reveal immediately
-    qa('.fade-in').forEach(el => el.classList.add('show'));
-  }
+  const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+
 
   // back-to-top
   const back = q('#backToTop');
@@ -91,3 +82,20 @@
     });
   }
 })();
+const heroBg = document.querySelector('.hero-bg');
+
+window.addEventListener('scroll', () => {
+  if (!heroBg) return;
+
+  const scrolled = window.scrollY;
+  heroBg.style.transform = `translateY(${scrolled * 0.15}px) scale(1.05)`;
+});
+
+
+// snitch type intro 
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("intro").style.opacity = "0";
+    document.getElementById("intro").style.pointerEvents = "none";
+  }, 1800);
+});
