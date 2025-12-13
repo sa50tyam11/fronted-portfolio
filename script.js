@@ -99,3 +99,18 @@ window.addEventListener("load", () => {
     document.getElementById("intro").style.pointerEvents = "none";
   }, 1800);
 });
+
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro");
+
+  setTimeout(() => {
+    intro.classList.add("hide");
+
+    // remove completely after fade
+    setTimeout(() => {
+      intro.remove();
+    }, 900);
+  }, 1000); 
+});
+
+

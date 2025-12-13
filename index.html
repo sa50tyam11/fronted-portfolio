@@ -8,13 +8,32 @@
   <meta name="description"
     content="Frontend engineer building clean, accessible and performance-focused web interfaces. Open to internships, junior roles and freelance." />
   <link rel="stylesheet" href="style.css">
-  <div id="intro">
-  <h1 class="intro-text">PORTFOLIO</h1>
-</div>
+
 
 </head>
 
 <body data-theme="dark">
+  <div id="intro">
+    <h1 class="intro-text">PORTFOLIO</h1>
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+      const intro = document.getElementById("intro");
+
+      if (!intro) return;
+
+      setTimeout(() => {
+        intro.style.opacity = "0";
+        intro.style.transform = "scale(1.05)";
+        intro.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          intro.remove();
+        }, 1000);
+      }, 3000); // 3 seconds visible
+    });
+  </script>
+
   <!-- Header (glass) -->
   <header class="site-header">
     <div class="header-inner container">
@@ -179,92 +198,85 @@
       </div>
     </section>
 
-    <section id="skills" class="section fade-in">
+    <section id="skills" class="section">
       <div class="container">
         <h2>Skills & Tools</h2>
-        <p class="section-lead">Technologies I use to build modern, scalable interfaces.</p>
+        <p class="section-lead">
+          Core frontend technologies and tools I use to build production-ready interfaces.
+        </p>
 
-        <div class="skills-loop">
-          <div class="loop-track">
-
-            <!-- Skills -->
+        <div class="skills-grid">
+          <div class="skill-card">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+            <span>HTML5</span>
+          </div>
+
+          <div class="skill-card">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+            <span>CSS3</span>
+          </div>
+
+          <div class="skill-card">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
               alt="JavaScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            <span>JavaScript</span>
+          </div>
 
-            <!-- Duplicate for seamless loop -->
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              alt="JavaScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+          <div class="skill-card">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            <span>React</span>
+          </div>
 
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <span>Git</span>
+          </div>
+
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
+              alt="GitHub">
+            <span>GitHub</span>
+          </div>
+
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            <span>Figma</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Infinite horizontal logo loop -->
-    <div class="skills-loop">
-      <div class="loop-track">
 
-        <!-- First round -->
-        <img src="assets/html.svg" alt="HTML">
-        <img src="assets/css.svg" alt="CSS">
-        <img src="assets/js.svg" alt="JavaScript">
-        <img src="assets/git.svg" alt="Git">
-        <img src="assets/react.svg" alt="React">
-        <img src="assets/api.svg" alt="API">
-        <img src="assets/canva.svg" alt="Canva">
-        <img src="assets/figma.svg" alt="Figma">
-        <img src="assets/node.svg" alt="Node.js">
+    <!-- ABOUT -->
+     <section id="about" class="section section-alt fade-in">
+  <div class="container about-grid">
 
-        <!-- Duplicate for seamless infinite loop -->
-        <img src="assets/html.svg" alt="HTML">
-        <img src="assets/css.svg" alt="CSS">
-        <img src="assets/js.svg" alt="JavaScript">
-        <img src="assets/git.svg" alt="Git">
-        <img src="assets/react.svg" alt="React">
-        <img src="assets/api.svg" alt="API">
-        <img src="assets/canva.svg" alt="Canva">
-        <img src="assets/figma.svg" alt="Figma">
-        <img src="assets/node.svg" alt="Node.js">
+    <!-- LEFT: ABOUT TEXT -->
+    <div>
+      <h2>About</h2>
+      <p>
+        I’m a frontend engineer who focuses on predictable, maintainable UI. I separate logic from
+        presentation, write testable calculation engines when needed, and prioritize accessibility
+        and performance. Delivered static sites, prototypes and small systems for clients and peers.
+      </p>
 
+      <div class="about-actions">
+        <a href="about.html" class="btn btn-outline">Read more about me</a>
+        <a href="assets/Satyam_Kumar_Resume.pdf" class="btn btn-primary" download>
+          Download CV
+        </a>
       </div>
     </div>
 
+    <!-- RIGHT: PHOTO (THIS WAS MISSING) -->
+    <aside class="about-photo glass">
+      <img src="assets/img1.jpg" alt="Satyam Kumar">
+    </aside>
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-alt fade-in">
-      <div class="container about-grid">
-        <div>
-          <h2>About</h2>
-          <p>I’m a frontend engineer who focuses on predictable, maintainable UI. I separate logic from
-            presentation, write testable calculation engines when needed, and prioritize accessibility and
-            performance. Delivered static sites, prototypes and small systems for clients and peers. Available for
-            internships, junior roles and contract work.</p>
-        </div>
+  </div>
+</section>
 
-        <aside class="contact-card glass">
-          <h3>Work with me</h3>
-          <p class="muted">Send a short brief — objective, audience, deadline and budget range. I’ll reply with
-            availability and next steps within 24 hours.</p>
-          <a class="btn btn-primary" href="mailto:krjhasatyam128@gmail.com">Email — Request availability</a>
-        </aside>
-      </div>
-    </section>
+
 
     <!-- CONTACT -->
     <section id="contact" class="section fade-in">
