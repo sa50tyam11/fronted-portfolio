@@ -19,8 +19,15 @@
   <script>
     window.addEventListener("load", () => {
       const intro = document.getElementById("intro");
-
       if (!intro) return;
+
+      // if intro already shown in this session, remove instantly
+      if (sessionStorage.getItem("introPlayed")) {
+        intro.remove();
+        return;
+      }
+
+      sessionStorage.setItem("introPlayed", "true");
 
       setTimeout(() => {
         intro.style.opacity = "0";
@@ -30,9 +37,10 @@
         setTimeout(() => {
           intro.remove();
         }, 1000);
-      }, 3000); // 3 seconds visible
+      }, 2500);
     });
   </script>
+
 
   <!-- Header (glass) -->
   <header class="site-header">
@@ -283,16 +291,19 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
+        <p class="section-lead">
+          Have a project, internship opportunity, or question? Drop a message.
+        </p>
 
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" novalidate>
           <div class="form-row">
-            <input type="text" name="from_name" placeholder="Name" required />
-            <input type="email" name="from_email" placeholder="Email" required />
+            <input type="text" name="from_name" placeholder="Your name" required />
+            <input type="email" name="from_email" placeholder="Your email" required />
           </div>
 
-          <textarea name="message" rows="5" placeholder="DROP YOUR MESSAGE"></textarea>
+          <textarea name="message" rows="5" placeholder="Your message" required></textarea>
 
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary" id="sendBtn">
             Send message
           </button>
 
@@ -346,10 +357,16 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
+
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    <body data-page="internal">
+    <!-- Contact logic -->
+    <script src="contact.js"></script>
 
-    </body>
+
+
+
+</body>
 
 </html>
