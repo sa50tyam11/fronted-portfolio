@@ -95,20 +95,32 @@ window.addEventListener('scroll', () => {
 // snitch type intro 
 window.addEventListener("load", () => {
   const intro = document.getElementById("intro");
+
+  // If intro doesn't exist, exit immediately
   if (!intro) return;
 
-  // 1.2s write + 0.4s pause = 1.6s
+  // If intro already played in this session, remove immediately
+  if (sessionStorage.getItem("introPlayed") === "true") {
+    intro.remove();
+    return;
+  }
+
+  // Mark as played
+  sessionStorage.setItem("introPlayed", "true");
+
+  // Slow write already running via CSS (1.2s)
   setTimeout(() => {
     intro.classList.add("hide");
 
-    // fade out duration = 0.4s
     setTimeout(() => {
       intro.remove();
-    }, 400);
-  }, 1600);
+    }, 200);
+  }, 1400);
 });
-
-
+if (document.body.dataset.page === "internal") {
+  const intro = document.getElementById("intro");
+  if (intro) intro.remove();
+}
 
 // email.js 
 (function () {
@@ -143,3 +155,25 @@ form.addEventListener("submit", function (e) {
       }
     );
 });
+// cenematic animation 
+const hero = document.querySelector(".hero");
+const cinematicTarget = document.querySelector(".cinematic-target");
+
+const cinematicObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        hero.classList.add("cinematic-out");
+        cinematicTarget.classList.add("cinematic-in");
+        cinematicObserver.disconnect(); // run once
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+if (cinematicTarget) {
+  cinematicObserver.observe(cinematicTarget);
+}
+
+

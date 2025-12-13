@@ -93,7 +93,7 @@
     </section>
 
     <!-- CASE STUDIES -->
-    <section id="case-studies" class="section fade-in">
+    <section id="case-studies" class="section fade-in cinematic-target">
       <div class="container">
         <h2>Selected Case Studies</h2>
         <p class="section-lead">Three technical case studies that show architecture, trade-offs, tests and measurable
@@ -169,25 +169,26 @@
           </article>
 
           <article class="mini-card">
-            <img src="assets/gallery-art.jpg" alt="Gallery">
+            <img src="assets/3d gallery.png" alt="Gallery">
             <div class="mini-body">
               <h4>CSS Gallery</h4>
               <p class="muted">Pure CSS layout & transitions</p>
-              <div class="mini-links"><a class="link" href="#">Code</a></div>
+              <div class="mini-links"><a class="link" href="https://sa50tyam11.github.io/pure-html-css-art/">Code</a>
+              </div>
             </div>
           </article>
 
           <article class="mini-card">
-            <img src="assets/cake-website.jpg" alt="Cake Shop">
+            <img src="assets/cake.png" alt="Cake Shop">
             <div class="mini-body">
               <h4>Cake Shop Landing</h4>
               <p class="muted">Design-to-code implementation with order UI</p>
-              <div class="mini-links"><a class="link" href="#">Demo</a></div>
+              <div class="mini-links"><a class="link" href="https://sa50tyam11.github.io/Cake-Shop/">Demo</a></div>
             </div>
           </article>
 
           <article class="mini-card">
-            <img src="assets/portfolio-site.jpg" alt="Portfolio Template">
+            <img src="assets/port.png" alt="Portfolio Template">
             <div class="mini-body">
               <h4>Portfolio Template</h4>
               <p class="muted">Animated, performance-focused template</p>
@@ -303,18 +304,52 @@
 
     <!-- Footer + back to top -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>© <span id="year"></span> Satyam Kumar — Frontend Engineer</div>
-        <div class="footer-links"><a href="https://github.com/sa50tyam11" target="_blank">GitHub</a> · <a
-            href="https://www.linkedin.com/in/satyamkrjha5011" target="_blank">LinkedIn</a></div>
+      <div class="container footer-grid">
+
+        <!-- Brand / Identity -->
+        <div class="footer-brand">
+          <h3 class="footer-logo">PORTFOLIO<span class="accent">.</span></h3>
+          <p class="footer-tagline">
+            Frontend developer focused on clean UI, accessibility, and maintainable code.
+          </p>
+        </div>
+
+        <!-- Social / Links -->
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/sa50tyam11" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/satyamkrjha5011" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/VViolet7711" target="_blank" rel="noopener">Twitter / X</a></li>
+            <li><a href="mailto:krjhasatyam128@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="footer-actions">
+          <h4>More</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="assets/Satyam_Kumar_Resume.pdf" download>Download CV</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Satyam Kumar. All rights reserved.</p>
       </div>
     </footer>
+
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-</body>
+    <body data-page="internal">
+
+    </body>
 
 </html>
