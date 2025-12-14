@@ -786,30 +786,18 @@ body {
   transform: translateY(0);
   opacity: 1;
 }
-/* ===== Contact Social Links ===== */
 
-.contact-social {
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.contact-social-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
 
 .contact-social-links {
   display: flex;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .contact-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.9rem;
   color: var(--text);
   opacity: 0.8;
@@ -818,4 +806,11 @@ body {
 
 .contact-social-links a:hover {
   opacity: 1;
+}
+
+.contact-social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  opacity: 0.85;
 }
