@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       intro.remove();
     }, 200);
-  }, 1600);
+  }, 1400);
 });
 if (document.body.dataset.page === "internal") {
   const intro = document.getElementById("intro");
